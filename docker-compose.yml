@@ -1,0 +1,14 @@
+version: '2.2'
+
+services:
+  python:
+    container_name: 'api-python'
+    build:
+      context: .
+      dockerfile: docker/python/Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - '8000:8000'
+    networks:
+      - default
